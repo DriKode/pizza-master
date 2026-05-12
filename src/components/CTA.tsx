@@ -6,15 +6,16 @@ import { useGSAP } from '@gsap/react';
 import { ArrowRight } from 'lucide-react';
 
 const CTA = () => {
-  const container = useRef(null);
-  const buttonRef = useRef(null);
-  const textRef = useRef(null);
+  const container = useRef<HTMLElement | null>(null);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const textRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     const button = buttonRef.current;
     const text = textRef.current;
-
+    if (!button || !text) return;
     const handleMouseMove = (e: MouseEvent) => {
+
       const { left, top, width, height } = button.getBoundingClientRect();
       const x = e.clientX - (left + width / 2);
       const y = e.clientY - (top + height / 2);
@@ -48,7 +49,7 @@ const CTA = () => {
   }, { scope: container });
 
   return (
-    <section 
+    <section
       id="contact"
       ref={container}
       className="py-32 bg-[#FF4500] overflow-hidden"
@@ -57,13 +58,13 @@ const CTA = () => {
         <h2 className="text-5xl md:text-8xl font-playfair font-bold text-[#0A0A0A] mb-12 leading-tight">
           ¿LISTO PARA PROBAR <br /> LO EXTRAORDINARIO?
         </h2>
-        
+
         <div className="flex justify-center items-center py-10">
           <button
             ref={buttonRef}
             className="group relative w-48 h-48 md:w-64 md:h-64 bg-[#0A0A0A] rounded-full flex items-center justify-center transition-shadow hover:shadow-[0_0_50px_rgba(0,0,0,0.3)]"
           >
-            <div 
+            <div
               ref={textRef}
               className="flex flex-col items-center text-[#FAF9F6] z-10"
             >

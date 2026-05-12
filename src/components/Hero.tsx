@@ -7,13 +7,21 @@ import { useGSAP } from '@gsap/react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
-  const container = useRef(null);
-  const headlineRef = useRef(null);
+  const container = useRef<HTMLElement | null>(null);
+  const headlineRef = useRef<HTMLHeadingElement | null>(null);
 
   useGSAP(() => {
-    const chars = headlineRef.current.innerText.split('');
-    headlineRef.current.innerHTML = chars
-      .map((char: string) => `<span class="inline-block char">${char === ' ' ? '&nbsp;' : char}</span>`)
+    const headline = headlineRef.current;
+
+    if (!headline) return;
+
+    const chars = headline.innerText.split('');
+
+    headline.innerHTML = chars
+      .map(
+        (char: string) =>
+          `<span class="inline-block char">${char === ' ' ? '&nbsp;' : char}</span>`
+      )
       .join('');
 
     const tl = gsap.timeline();
@@ -26,18 +34,18 @@ const Hero = () => {
       duration: 1,
       ease: 'expo.out',
     })
-    .from('.hero-sub', {
-      opacity: 0,
-      y: 20,
-      duration: 0.8,
-    }, '-=0.5')
-    .from('.hero-image', {
-      opacity: 0,
-      scale: 0.8,
-      rotate: -10,
-      duration: 1.5,
-      ease: 'elastic.out(1, 0.5)',
-    }, '-=1');
+      .from('.hero-sub', {
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+      }, '-=0.5')
+      .from('.hero-image', {
+        opacity: 0,
+        scale: 0.8,
+        rotate: -10,
+        duration: 1.5,
+        ease: 'elastic.out(1, 0.5)',
+      }, '-=1');
 
     // Subtle floating animation for the pizza
     gsap.to('.hero-image', {
@@ -57,14 +65,14 @@ const Hero = () => {
   }, { scope: container });
 
   return (
-    <section 
+    <section
       ref={container}
       className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left: Content */}
         <div className="z-10 text-center lg:text-left">
-          <h1 
+          <h1
             ref={headlineRef}
             className="text-6xl md:text-8xl font-playfair font-bold tracking-tighter leading-[0.9] text-[#FAF9F6] mb-8"
           >

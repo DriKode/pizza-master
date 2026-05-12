@@ -7,17 +7,21 @@ const FireBackground = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
+
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const canvasEl: HTMLCanvasElement = canvas;
+
+    const ctx = canvasEl.getContext('2d');
+
     if (!ctx) return;
 
     let animationFrameId: number;
     let particles: Particle[] = [];
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvasEl.width = window.innerWidth;
+      canvasEl.height = window.innerHeight;
     };
 
     window.addEventListener('resize', resizeCanvas);
@@ -33,8 +37,8 @@ const FireBackground = () => {
       color: string;
 
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = canvas.height + Math.random() * 100;
+        this.x = Math.random() * canvasEl.width;
+        this.y = canvasEl.height + Math.random() * 100;
         this.size = Math.random() * 2 + 0.5;
         this.speedY = Math.random() * 1 + 0.5;
         this.speedX = (Math.random() - 0.5) * 0.5;
@@ -68,8 +72,8 @@ const FireBackground = () => {
     };
 
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+      ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+
       if (particles.length < 100 && Math.random() < 0.1) {
         particles.push(new Particle());
       }
