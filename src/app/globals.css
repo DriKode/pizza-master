@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-playfair: var(--font-playfair);
+  --font-inter: var(--font-inter);
+  
+  --color-rich-black: #0A0A0A;
+  --color-blaze-orange: #FF4500;
+  --color-off-white: #FAF9F6;
+}
+
+:root {
+  --background: #0A0A0A;
+  --foreground: #FAF9F6;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), serif;
+}
+
+.glass {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(250, 249, 246, 0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #FAF9F6, #FF4500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+::selection {
+  background: #FF4500;
+  color: #FAF9F6;
+}
