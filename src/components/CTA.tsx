@@ -6,18 +6,15 @@ import { useGSAP } from '@gsap/react';
 import { ArrowRight } from 'lucide-react';
 
 const CTA = () => {
-  const container = useRef<HTMLElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
+  const container = useRef(null);
+  const buttonRef = useRef(null);
+  const textRef = useRef(null);
 
   useGSAP(() => {
     const button = buttonRef.current;
     const text = textRef.current;
 
-    if (!button || !text) return;
-
     const handleMouseMove = (e: MouseEvent) => {
-      if (!button) return;
       const { left, top, width, height } = button.getBoundingClientRect();
       const x = e.clientX - (left + width / 2);
       const y = e.clientY - (top + height / 2);
@@ -48,11 +45,6 @@ const CTA = () => {
 
     button.addEventListener('mousemove', handleMouseMove);
     button.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      button.removeEventListener('mousemove', handleMouseMove);
-      button.removeEventListener('mouseleave', handleMouseLeave);
-    };
   }, { scope: container });
 
   return (

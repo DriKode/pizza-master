@@ -7,12 +7,10 @@ import { useGSAP } from '@gsap/react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
-  const container = useRef<HTMLElement>(null);
-  const headlineRef = useRef<HTMLHeadingElement>(null);
+  const container = useRef(null);
+  const headlineRef = useRef(null);
 
   useGSAP(() => {
-    if (!headlineRef.current) return;
-    
     const chars = headlineRef.current.innerText.split('');
     headlineRef.current.innerHTML = chars
       .map((char: string) => `<span class="inline-block char">${char === ' ' ? '&nbsp;' : char}</span>`)
