@@ -9,7 +9,7 @@ const pizzas = [
   {
     id: 1,
     name: 'Diavola Inferno',
-    price: '$24',
+    price: 'Bs. 24',
     description: 'Salami picante, Nduja, miel infusionada con chile.',
     image: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&q=80',
     tags: ['Picante', 'Popular'],
@@ -17,7 +17,7 @@ const pizzas = [
   {
     id: 2,
     name: 'Truffle Regale',
-    price: '$32',
+    price: 'Bs. 32',
     description: 'Carpaccio de trufa negra, porcini, fior di latte.',
     image: 'https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?auto=format&fit=crop&q=80',
     tags: ['Lujo'],
@@ -25,7 +25,7 @@ const pizzas = [
   {
     id: 3,
     name: 'The Masterpiece',
-    price: '$28',
+    price: 'Bs. 28',
     description: 'Mortadela, pesto de pistacho, corazón de burrata.',
     image: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&q=80',
     tags: ['Artesanal'],
@@ -33,7 +33,7 @@ const pizzas = [
   {
     id: 4,
     name: 'Forest Umami',
-    price: '$26',
+    price: 'Bs. 26',
     description: 'Hongos silvestres, gorgonzola, nueces.',
     image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80',
     tags: ['Vegetariano'],
