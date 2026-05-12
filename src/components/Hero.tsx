@@ -76,7 +76,7 @@ const Hero = () => {
             ref={headlineRef}
             className="text-6xl md:text-[10rem] font-playfair font-bold tracking-tighter leading-[0.85] text-[#FAF9F6] mb-8"
           >
-            El Arte <br /> de la Masa
+            Fuego y Masa
           </h1>
           <p className="hero-sub text-xl md:text-2xl text-[#FAF9F6]/60 max-w-xl mx-auto lg:mx-0 mb-10 font-light">
             Creada con pasión, horneada con precisión. Vive la cumbre de la gastronomía artesanal en cada rebanada.
