@@ -74,7 +74,7 @@ const Hero = () => {
         <div className="z-10 text-center lg:text-left">
           <h1
             ref={headlineRef}
-            className="text-6xl md:text-8xl font-playfair font-bold tracking-tighter leading-[0.9] text-[#FAF9F6] mb-8"
+            className="text-4xl md:text-8xl font-playfair font-bold tracking-tighter leading-[0.9] text-[#FAF9F6] mb-8"
           >
             EL ARTE DE LA MASA
           </h1>
