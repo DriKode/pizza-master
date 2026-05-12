@@ -74,9 +74,9 @@ const Hero = () => {
         <div className="z-10 text-center lg:text-left">
           <h1
             ref={headlineRef}
-            className="text-4xl md:text-8xl font-playfair font-bold tracking-tighter leading-[0.9] text-[#FAF9F6] mb-8"
+            className="text-5xl md:text-9xl font-playfair font-bold tracking-tighter leading-[0.9] text-[#FAF9F6] mb-8"
           >
-            EL ARTE DE LA MASA
+            EL ARTE <br /> DE LA MASA
           </h1>
           <p className="hero-sub text-xl md:text-2xl text-[#FAF9F6]/60 max-w-xl mx-auto lg:mx-0 mb-10 font-light">
             Creada con pasión, horneada con precisión. Vive la cumbre de la gastronomía artesanal en cada rebanada.

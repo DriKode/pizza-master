@@ -79,19 +79,19 @@ const CTA = () => {
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-[#0A0A0A]/10 pt-20">
           <div className="text-left">
             <h4 className="text-[#0A0A0A] font-bold uppercase tracking-widest text-xs mb-4">Ubicación</h4>
-            <p className="text-[#0A0A0A] font-playfair text-xl">
+            <p className="text-[#0A0A0A] font-inter text-lg font-light leading-relaxed">
               Calle Gastronomía 123,<br />Nueva York, NY 10001
             </p>
           </div>
           <div className="text-left">
             <h4 className="text-[#0A0A0A] font-bold uppercase tracking-widest text-xs mb-4">Reservas</h4>
-            <p className="text-[#0A0A0A] font-playfair text-xl">
+            <p className="text-[#0A0A0A] font-inter text-lg font-light leading-relaxed">
               +1 (555) MASTER-PIZZA<br />ciao@pizzamaster.com
             </p>
           </div>
           <div className="text-left">
             <h4 className="text-[#0A0A0A] font-bold uppercase tracking-widest text-xs mb-4">Horarios</h4>
-            <p className="text-[#0A0A0A] font-playfair text-xl">
+            <p className="text-[#0A0A0A] font-inter text-lg font-light leading-relaxed">
               Lun-Dom: 12:00 — 23:00<br />Noches largas Vie y Sáb
             </p>
           </div>
