@@ -54,10 +54,11 @@ const BentoGrid = () => {
     // Tilt effect logic
     const cards = document.querySelectorAll('.bento-card');
     cards.forEach((card) => {
-      card.addEventListener('mousemove', (e: any) => {
+      card.addEventListener('mousemove', (e: Event) => {
+        const mouseEvent = e as MouseEvent;
         const { left, top, width, height } = card.getBoundingClientRect();
-        const x = (e.clientX - left) / width - 0.5;
-        const y = (e.clientY - top) / height - 0.5;
+        const x = (mouseEvent.clientX - left) / width - 0.5;
+        const y = (mouseEvent.clientY - top) / height - 0.5;
         
         gsap.to(card, {
           rotateY: x * 10,

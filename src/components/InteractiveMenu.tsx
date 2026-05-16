@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Plus, Flame } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 const pizzas = [
   {
